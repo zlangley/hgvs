@@ -6,7 +6,7 @@ with open("doc/description.txt") as f:
     long_description = f.read()
 
 if version_info < (3, ):
-    version_specific_requirements = ['unicodecsv']
+    version_specific_requirements = ['unicodecsv', 'enum34']
 else:
     version_specific_requirements = []
 
@@ -57,7 +57,6 @@ setup(license="Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)",
           "biopython==1.69",    # 1.70 fails on rtd due to numpy absence
           "bioutils>=0.2.2",
           "configparser>=3.3.0",
-          "enum34",
           "ipython<6",          # for hgvs-shell; >=6 for Py3 only
           "parsley",
           "psycopg2!=2.7",  # 2.7 bug: https://github.com/psycopg/psycopg2/issues/517
